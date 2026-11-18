@@ -4,6 +4,13 @@ All notable changes to the AskAnina Nextcloud app are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/).
 
+## 0.4.4 - 2026-11-18
+
+### Changed
+- App Store screenshots taken in Nextcloud (the first one is the App Store card's picture), with
+  demo data only.
+- The description links to a 1-minute video of AskAnina inside Nextcloud.
+
 ## 0.4.3 - 2026-11-18
 
 ### Changed
