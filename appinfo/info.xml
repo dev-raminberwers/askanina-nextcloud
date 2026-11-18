@@ -6,11 +6,15 @@
     <summary>Your personal assistant: today, calendar, trips and reminders</summary>
     <summary lang="nl">Je persoonlijke assistent: vandaag, agenda, reizen en herinneringen</summary>
     <description><![CDATA[
-AskAnina inside Nextcloud: the same app as on the web, as a thin Nextcloud app. Everything is
-calculated on the AskAnina server (askanina.com); this app only shows it. You sign in with your
-AskAnina account. What is sent and stored is described at https://askanina.com.
+AskAnina inside Nextcloud: this app shows the AskAnina web app (https://app.askanina.com) in
+Nextcloud's own page, with Nextcloud's menu and an "AskAnina Today" Dashboard widget. Everything is
+calculated by the AskAnina service; this app only frames it. You sign in with your AskAnina account.
+What is sent and stored is described at https://askanina.com.
+
+This app (the frame around AskAnina) is open source under the Apache-2.0 licence. The AskAnina
+service and web app it shows are proprietary: © Ramin Berwers. All rights reserved.
     ]]></description>
-    <version>0.4.0</version>
+    <version>0.4.2</version>
     <licence>Apache-2.0</licence>
     <author>BERWERS innovations doing business as Ramin BERWERS</author>
     <namespace>AskAnina</namespace>

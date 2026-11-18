@@ -1,10 +1,17 @@
 <?php
 
+/*
+ * SPDX-FileCopyrightText: Ramin Berwers
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 declare(strict_types=1);
 
 namespace OCA\AskAnina\Dashboard;
 
 use OCA\AskAnina\AppInfo\Application;
+use OCA\AskAnina\Service\AppUrl;
+use OCP\AppFramework\Services\IInitialState;
 use OCP\Dashboard\IIconWidget;
 use OCP\Dashboard\IWidget;
 use OCP\IL10N;
@@ -12,14 +19,12 @@ use OCP\IURLGenerator;
 use OCP\Util;
 
 /**
- * "AskAnina Today" on Nextcloud's Dashboard (owner 2026-11-08): the next appointments of today with
- * their times and leave-by line. The appointments are sealed end to end with keys only the user's
- * browsers and phones hold, so this server can never read or draw them (not an IAPIWidget: it has
- * no items to give). The widget is a small frame of the app's own Today page (#/widget/today, the
- * same frame page as the app with its strict policy), worked out in the browser with the user's keys.
+ * "AskAnina Today" on Nextcloud's Dashboard: the AskAnina web app's own Today page (#/widget/today) in a
+ * small frame. The appointments are sealed end to end with keys only the user's browsers and phones
+ * hold, so this server never reads or draws them; the frame shows them in the browser.
  */
 class TodayWidget implements IWidget, IIconWidget {
-    public function __construct(private IL10N $l10n, private IURLGenerator $urls) {
+    public function __construct(private IL10N $l10n, private IURLGenerator $urls, private AppUrl $appUrl, private IInitialState $state) {
     }
 
     public function getId(): string {
@@ -35,7 +40,6 @@ class TodayWidget implements IWidget, IIconWidget {
     }
 
     public function getIconClass(): string {
-        // Nextcloud's own calendar icon where a version shows the class; the app's icon below otherwise (IIconWidget).
         return 'icon-calendar-dark';
     }
 
@@ -48,7 +52,12 @@ class TodayWidget implements IWidget, IIconWidget {
     }
 
     public function load(): void {
-        // The script carries its content hash in its name (appinfo/build.json), as the pane's.
+        $origin = $this->appUrl->origin();
+        $frame = $this->appUrl->frameFor($this->urls->linkToRouteAbsolute(Application::APP_ID . '.page.check'), '#/widget/today');
+        if ($origin === null || $frame === null) {
+            return;
+        }
+        $this->state->provideInitialState('widget', ['appOrigin' => $origin, 'frame' => $frame, 'page' => $this->getUrl()]);
         $build = json_decode((string) @file_get_contents(__DIR__ . '/../../appinfo/build.json'), true);
         Util::addScript(Application::APP_ID, is_array($build) && is_string($build['dashboard'] ?? null) ? $build['dashboard'] : 'askanina-dashboard');
     }

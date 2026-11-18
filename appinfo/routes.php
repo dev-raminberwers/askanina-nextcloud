@@ -1,12 +1,17 @@
 <?php
 
+/*
+ * SPDX-FileCopyrightText: Ramin Berwers
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 declare(strict_types=1);
 
-// One page: the AskAnina web app. Everything else goes straight to the AskAnina server.
+// The AskAnina page (a frame of the AskAnina web app) and the check the framed app asks.
 return [
     'routes' => [
         ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
-        // The web app's own page in the frame, with a strict Content Security Policy.
-        ['name' => 'page#frame', 'url' => '/frame', 'verb' => 'GET'],
+        // The framed app asks this (CORS, no cookies) to learn that this Nextcloud frames it.
+        ['name' => 'page#check', 'url' => '/check', 'verb' => 'GET'],
     ],
 ];

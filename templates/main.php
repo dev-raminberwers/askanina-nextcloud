@@ -1,4 +1,8 @@
 <?php
+/*
+ * SPDX-FileCopyrightText: Ramin Berwers
+ * SPDX-License-Identifier: Apache-2.0
+ */
 /** @var array $_ */
 ?>
 <div id="app-navigation" class="app-navigation-personal askanina-nav--empty" role="navigation">
@@ -10,7 +14,10 @@
 	</div>
 </div>
 <div id="app-content">
-	<!-- The breathing logo until the frame's page is there (css/askanina.css, owner 2026-11-11). -->
 	<div id="askanina-loading" aria-hidden="true"><span></span></div>
-	<iframe id="askanina-frame" src="<?php p($_['src']); ?>" title="AskAnina" allow="geolocation; clipboard-write"></iframe>
+	<!-- The AskAnina web app from its own address (another origin): it cannot reach this page or Nextcloud. -->
+	<iframe id="askanina-frame" src="<?php p($_['src']); ?>" title="AskAnina"
+		allow="geolocation; clipboard-write; microphone; camera"
+		sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-downloads allow-modals allow-top-navigation-by-user-activation"
+		referrerpolicy="no-referrer"></iframe>
 </div>

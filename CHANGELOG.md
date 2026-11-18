@@ -4,7 +4,27 @@ All notable changes to the AskAnina Nextcloud app are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/).
 
-## Unreleased
+## 0.4.2 - 2026-11-18
+
+### Fixed
+- The App Store frame works when Nextcloud is on a private or local address (Chrome's Local
+  Network Access no longer blocks it): the web app no longer fetches the shell's check route;
+  the shell's welcome message names the app origin instead.
+- A page that frames the AskAnina embed page without being the Nextcloud shell gets only an
+  "Open AskAnina" link, not the sign-in.
+
+## 0.4.1 - 2026-11-17
+
+### Changed
+- The App Store version is now a thin frame: it shows the AskAnina web app from its own address
+  (https://app.askanina.com) inside Nextcloud and holds none of its code. The frame and Nextcloud
+  only talk through checked messages; no Nextcloud password or session is passed to AskAnina.
+  Admins can point the frame elsewhere with `occ config:app:set askanina frame_url --value=…`.
+- This app (the frame) is Apache-2.0; the AskAnina service it shows is proprietary
+  (© Ramin Berwers. All rights reserved.).
+- Licence: Apache-2.0 (was AGPL-3.0-or-later).
+- App Store details: bug reports go to https://askanina.com/?p=support; the source is public at
+  https://github.com/dev-raminberwers/askanina-nextcloud.
 
 ### Added
 - Loading: the AskAnina logo breathes (softly with reduced motion) until the app appears, in the
