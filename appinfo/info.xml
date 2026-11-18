@@ -6,15 +6,27 @@
     <summary>Your personal assistant: today, calendar, trips and reminders</summary>
     <summary lang="nl">Je persoonlijke assistent: vandaag, agenda, reizen en herinneringen</summary>
     <description><![CDATA[
-AskAnina inside Nextcloud: this app shows the AskAnina web app (https://app.askanina.com) in
-Nextcloud's own page, with Nextcloud's menu and an "AskAnina Today" Dashboard widget. Everything is
-calculated by the AskAnina service; this app only frames it. You sign in with your AskAnina account.
-What is sent and stored is described at https://askanina.com.
+**AskAnina: your personal assistant, right inside Nextcloud.**
 
-This app (the frame around AskAnina) is open source under the Apache-2.0 licence. The AskAnina
-service and web app it shows are proprietary: © Ramin Berwers. All rights reserved.
+AskAnina keeps your day in order and thinks ahead for you. Open it from Nextcloud's menu, or add the **AskAnina Today** widget to your Dashboard.
+
+▶ **[Watch AskAnina in 1 minute](https://askanina.com/videos/en/01-askanina-in-1-minute.mp4)**
+
+- **Today at a glance:** appointments, reminders, tasks, weather warnings and what's coming up, in one calm overview.
+- **Everything connected:** AskAnina links your people, appointments, places, trips, documents and notes, so one tap shows everything that belongs together, and its history.
+- **Your Nextcloud calendars, contacts and Deck:** AskAnina works with what you already have.
+- **On time, everywhere:** travel times to every appointment, when to leave, traffic, parking, flights and fuel prices along the way.
+- **Trips:** plan whole journeys, share them with the people travelling with you.
+- **Deliveries, documents and expiry dates:** know what's arriving and what's about to expire.
+- **Health, podcasts, news, TV and more:** everything in one place, on your phone and in Nextcloud.
+
+Sign in with your AskAnina account. New accounts get **14 days of everything, free**. Using AskAnina in Nextcloud is part of the Plus and Complete plans.
+
+Your data stays yours: how AskAnina handles it is at https://askanina.com.
+
+_This Nextcloud app is open source (Apache-2.0). The AskAnina service it opens is © Ramin Berwers, all rights reserved._
     ]]></description>
-    <version>0.4.2</version>
+    <version>0.4.3</version>
     <licence>Apache-2.0</licence>
     <author>BERWERS innovations doing business as Ramin BERWERS</author>
     <namespace>AskAnina</namespace>

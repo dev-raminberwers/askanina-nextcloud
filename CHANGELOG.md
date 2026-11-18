@@ -4,6 +4,12 @@ All notable changes to the AskAnina Nextcloud app are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/).
 
+## 0.4.3 - 2026-11-18
+
+### Changed
+- The app icon is a vector drawing of Anina (the App Store showed a gear: it ignores pictures inside an SVG).
+- The App Store description says what AskAnina does for you.
+
 ## 0.4.2 - 2026-11-18
 
 ### Fixed
