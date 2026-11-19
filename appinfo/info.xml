@@ -26,11 +26,13 @@ Your data stays yours: how AskAnina handles it is at https://askanina.com.
 
 _This Nextcloud app is open source (Apache-2.0). The AskAnina service it opens is © Ramin Berwers, all rights reserved._
     ]]></description>
-    <version>0.4.4</version>
+    <version>0.4.5</version>
     <licence>Apache-2.0</licence>
     <author>BERWERS innovations doing business as Ramin BERWERS</author>
     <namespace>AskAnina</namespace>
     <category>organization</category>
+    <category>dashboard</category>
+    <category>ai</category>
     <website>https://askanina.com</website>
     <bugs>https://askanina.com/?p=support</bugs>
     <repository type="git">https://github.com/dev-raminberwers/askanina-nextcloud</repository>

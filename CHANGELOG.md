@@ -4,6 +4,11 @@ All notable changes to the AskAnina Nextcloud app are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/).
 
+## 0.4.5 - 2026-11-19
+
+### Changed
+- Also listed in the App Store categories Dashboard (the AskAnina Today widget) and AI (Anina).
+
 ## 0.4.4 - 2026-11-18
 
 ### Changed
